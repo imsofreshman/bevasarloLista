@@ -25,8 +25,9 @@ public class Teszt {
         SósÉtel porkolt = new SósÉtel("Pörkölt", 940, boltEgysegek.Hús);
         SósÉtel pizza = new SósÉtel("Pizza", 2100, boltEgysegek.Pékárú);
         SósÉtel kenyer = new SósÉtel("Kenyér", 189, boltEgysegek.Pékárú);
-        SósÉtel krumpli = new SósÉtel("Krumpli", 15, boltEgysegek.Zöldség);
-        SósÉtel hagyma = new SósÉtel("perec", 15, boltEgysegek.Zöldség);
+        SósÉtel krumpli = new SósÉtel("Krumpli", 4, boltEgysegek.Zöldség);
+        SósÉtel hagyma = new SósÉtel("perec", 37, boltEgysegek.Zöldség);
+                
         //Elektornikai cikkek
         TartósCikk playStation = new TartósCikk("Sony", 4, "Playstation", 300000, boltEgysegek.ElektronikaiCikk);
         TartósCikk processzor = new TartósCikk("Intel", 5, "i5", 68000, boltEgysegek.ElektronikaiCikk);
@@ -34,11 +35,15 @@ public class Teszt {
         TartósCikk hangfal = new TartósCikk("Klipsch", 4, "Soundblaster", 140000, boltEgysegek.ElektronikaiCikk);
         TartósCikk laptop = new TartósCikk("Dell", 4, "E2545", 470000, boltEgysegek.ElektronikaiCikk);
 
+        
+        //Boltok
         Bolt tesco = new Bolt("Tesco", "Királyszék ut 33");
         Bolt auchan = new Bolt("Auchan", "Vasvári Pál u. 1/a");
         Bolt mediaMarkt = new Bolt("Média Markt", "Budai út 1");
         Bolt abc = new Bolt("ABC", "Új utca 1");
 
+        
+        //Termékek feltöltése
         tesco.termekHozzadasa(sutemeny);
         tesco.termekHozzadasa(muzli);
         tesco.termekHozzadasa(perec);
@@ -63,11 +68,15 @@ public class Teszt {
         abc.termekHozzadasa(porkolt);
         abc.termekHozzadasa(kenyer);
 
-        System.out.println("Az összes vásárolni kívánt termék a " + tesco.getNev() + "-ban" + tesco.toString());
-        System.out.println("Az összes pékárú:" + tesco.listazzEgysegSzerint(boltEgysegek.Pékárú));
+        
         int ar = tesco.osszegzettAr();
-
+        
+        System.out.println("Az összes vásárolni kívánt termék a " + tesco.getNev() + "-ban" + tesco.toString());
+        System.out.println("Az összes pékárú:\n" + tesco.listazzEgysegSzerint(boltEgysegek.Pékárú));
+        
         System.out.println("Az osszes termek ára " + ar + "Ft");
-
+        
+      //  System.out.println(tesco.altalanosKereses("Krumpli"));
+        
     }
 }

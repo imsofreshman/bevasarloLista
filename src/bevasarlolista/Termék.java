@@ -1,4 +1,5 @@
 package bevasarlolista;
+
 /**
  *
  * @author Pálfi Ádám - LRWQPG
@@ -11,7 +12,7 @@ enum boltEgysegek {
     Pékárú,
     ElektronikaiCikk,
     Gyümölcs
-    
+
 }
 
 public class Termék {
@@ -55,7 +56,7 @@ public class Termék {
 
     @Override
     public String toString() {
-        return getNev();
+        return "A termék neve: " + getNev() + " ára: " + getAr() + "FT " + boltegyseg + "-részen van";
     }
 
 }

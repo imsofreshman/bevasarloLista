@@ -1,8 +1,6 @@
 package bevasarlolista;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -55,7 +53,7 @@ public class Bolt {
         Lista.remove(termek);
     }
 
-    int osszegzettAr() {
+    int osszegzettAr() {    //az osszegzett arat lehet vele lekérdezni
         int ar = 0;
         for (Termék termek : Lista) {
             ar += termek.getAr();
@@ -63,7 +61,7 @@ public class Bolt {
         return ar;
     }
 
-    List listazzEgysegSzerint(boltEgysegek boltegysegszerint) {
+    List listazzEgysegSzerint(boltEgysegek boltegysegszerint) { //listázza egy adott egységhez tartozó termékeket pl Húsok
 
         List<Termék> egysegSzerintiLista = new ArrayList<>();
 
@@ -76,16 +74,29 @@ public class Bolt {
         return egysegSzerintiLista;
     }
 
-    String bejaras() {
+    String bejaras() {  //a felirt termékeket az egységek szerint rendezetten csoportositva adja vissza
         String result = "";
+        
         return result;
+    }
+    
+    List<Termék> altalanosKereses(String mit){ //minden stringet végignéz és visszadja a termékeket amelyikekben voltak a stringek
+        
+        List keresettTermekek = new ArrayList();
+        
+        for(Termék termek : Lista){
+            if (termek.getNev() == mit) {
+                keresettTermekek.add(termek);
+            }
+        }
+        return keresettTermekek;
     }
 
     @Override
-    public String toString() {
-        String results = "";
+    public String toString() { //kiirja a boltban tárolt összes vásárolni kivánt terméket
+        String results = "\n";
         for (Termék termek : Lista) {
-            results += ", " + termek.toString();
+            results += termek.toString() + "\n";
         }
         return results;
     }
