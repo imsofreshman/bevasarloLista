@@ -15,6 +15,30 @@ public class Bolt {
     private String cim;
     private List<Termék> Lista = new ArrayList<Termék>(); //milyen termékeket akarunk megvenni
 
+    public String getNev() {
+        return nev;
+    }
+
+    public void setNev(String nev) {
+        this.nev = nev;
+    }
+
+    public String getCim() {
+        return cim;
+    }
+
+    public void setCim(String cim) {
+        this.cim = cim;
+    }
+
+    public List<Termék> getLista() {
+        return Lista;
+    }
+
+    public void setLista(List<Termék> Lista) {
+        this.Lista = Lista;
+    }
+
     public Bolt(String nev, String cim) {
         this.nev = nev;
         this.cim = cim;
