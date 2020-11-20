@@ -26,14 +26,14 @@ public class Teszt {
         SósÉtel pizza = new SósÉtel("Pizza", 2100, boltEgysegek.Pékárú);
         SósÉtel kenyer = new SósÉtel("Kenyér", 189, boltEgysegek.Pékárú);
         SósÉtel krumpli = new SósÉtel("Krumpli", 4, boltEgysegek.Zöldség);
-        SósÉtel hagyma = new SósÉtel("perec", 37, boltEgysegek.Zöldség);
+        SósÉtel hagyma = new SósÉtel("Hagyma", 37, boltEgysegek.Zöldség);
                 
         //Elektornikai cikkek
         TartósCikk playStation = new TartósCikk("Sony", 4, "Playstation", 300000, boltEgysegek.ElektronikaiCikk);
         TartósCikk processzor = new TartósCikk("Intel", 5, "i5", 68000, boltEgysegek.ElektronikaiCikk);
-        TartósCikk videoKartya = new TartósCikk("Nvidia", 4, "Gtx-1080", 270000, boltEgysegek.ElektronikaiCikk);
-        TartósCikk hangfal = new TartósCikk("Klipsch", 4, "Soundblaster", 140000, boltEgysegek.ElektronikaiCikk);
-        TartósCikk laptop = new TartósCikk("Dell", 4, "E2545", 470000, boltEgysegek.ElektronikaiCikk);
+        TartósCikk videoKartya = new TartósCikk("Nvidia", 2, "Gtx-1080", 270000, boltEgysegek.ElektronikaiCikk);
+        TartósCikk hangfal = new TartósCikk("Klipsch", 1, "Soundblaster", 140000, boltEgysegek.ElektronikaiCikk);
+        TartósCikk laptop = new TartósCikk("Dell", 3, "E2545", 470000, boltEgysegek.ElektronikaiCikk);
 
         
         //Boltok
@@ -67,8 +67,11 @@ public class Teszt {
         abc.termekHozzadasa(barack);
         abc.termekHozzadasa(porkolt);
         abc.termekHozzadasa(kenyer);
-
+            
         
+        
+        System.out.println(tesco.altalanosKereses("Műzli"));
+   
         int ar = tesco.osszegzettAr();
         
         System.out.println("Az összes vásárolni kívánt termék a " + tesco.getNev() + "-ban" + tesco.toString());

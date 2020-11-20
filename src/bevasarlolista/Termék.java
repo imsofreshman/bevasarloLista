@@ -21,17 +21,17 @@ public class Termék {
     private int ar;
     private boltEgysegek boltegyseg; //a bolt mely területén található a termék
 
+    public Termék(String nev, int ar, boltEgysegek boltegyseg) {
+        this.nev = nev;
+        this.ar = ar;
+        this.boltegyseg = boltegyseg;
+    }
+
     public boltEgysegek getBoltegyseg() {
         return boltegyseg;
     }
 
     public void setBoltegyseg(boltEgysegek boltegyseg) {
-        this.boltegyseg = boltegyseg;
-    }
-
-    public Termék(String nev, int ar, boltEgysegek boltegyseg) {
-        this.nev = nev;
-        this.ar = ar;
         this.boltegyseg = boltegyseg;
     }
 

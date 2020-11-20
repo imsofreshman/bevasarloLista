@@ -23,4 +23,11 @@ public class Ital extends Termék {
     public Ital() {
     }
 
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    
 }

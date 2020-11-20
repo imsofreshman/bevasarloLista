@@ -12,4 +12,11 @@ public class ÉdesÉtel extends Étel {
     public ÉdesÉtel() {
     }
 
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    
 }
