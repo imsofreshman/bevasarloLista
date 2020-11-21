@@ -1,7 +1,6 @@
 package bevasarlolista;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -100,7 +99,7 @@ public class Bolt {
         }
 
         if (!listazzEgysegSzerint(boltEgysegek.Pékárú).isEmpty()) {
-            pekaruk = listazzEgysegSzerint(boltEgysegek.Pékárú).toString();;
+            pekaruk = listazzEgysegSzerint(boltEgysegek.Pékárú).toString();
         } else {
             pekaruk = "Nincsenek Pékárúk";
         }
@@ -142,16 +141,6 @@ public class Bolt {
 
         }
         return keresettTermekek;
-    }
-
-    void teszt() {
-        //tombe valtoztatjuk a listánkat
-        Termék[] tomb = Lista.toArray(new Termék[0]);
-
-        for (Termék termek : tomb) {
-            System.out.println(termek + " ");
-        }
-
     }
 
     @Override
