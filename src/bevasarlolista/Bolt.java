@@ -1,6 +1,7 @@
 package bevasarlolista;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -67,9 +68,8 @@ public class Bolt {
     List listazzEgysegSzerint(boltEgysegek boltegysegszerint) { //listázza egy adott egységhez tartozó termékeket pl Húsok
 
         List<Termék> egysegSzerintiLista = new ArrayList<>(); //készítünk egy új listát
-
         for (Termék termek : Lista) {       //végig megyünk az eredeti listán
-            if (termek.getBoltegyseg() == boltegysegszerint) {  //ha 
+            if (termek.getBoltegyseg() == boltegysegszerint) {  //ha megegyzeik a megadott egységgel akkor belerakjuk uj listába
                 egysegSzerintiLista.add(termek);
             }
 
@@ -77,12 +77,58 @@ public class Bolt {
         return egysegSzerintiLista;
     }
 
-    String bejaras() {  //a felirt termékeket az egységek szerint rendezetten csoportositva adja vissza
-        String result = "";
+    String bejaras() {  //a felirt termékeket az egységek szerint csoportosítva adja vissza
+        System.out.println("A " + getNev() + " boltban" + " ezeket a termékeket szeretnénk megvenni egységek szerint:");
+        String tejtermek = "";
+        String husok = "";
+        String pekaruk = "";
+        String zoldseg = "";
+        String italok = "";
+        String elektronikaicikkek = "";
 
-        System.out.println(boltEgysegek.ElektronikaiCikk);
+        //sorba kell rendenzni a termékeket
+        if (!listazzEgysegSzerint(boltEgysegek.Tejtermék).isEmpty()) {
+            tejtermek = listazzEgysegSzerint(boltEgysegek.Tejtermék).toString();
+        } else {
+            tejtermek = "Nincsenek tejtermékek";
+        }
 
-        return result;
+        if (!listazzEgysegSzerint(boltEgysegek.Hús).isEmpty()) {
+            husok = listazzEgysegSzerint(boltEgysegek.Hús).toString();
+        } else {
+            husok = "Nincsenek Hústermékek";
+        }
+
+        if (!listazzEgysegSzerint(boltEgysegek.Pékárú).isEmpty()) {
+            pekaruk = listazzEgysegSzerint(boltEgysegek.Pékárú).toString();;
+        } else {
+            pekaruk = "Nincsenek Pékárúk";
+        }
+
+        if (!listazzEgysegSzerint(boltEgysegek.Zöldség).isEmpty()) {
+            zoldseg = listazzEgysegSzerint(boltEgysegek.Zöldség).toString();
+        } else {
+            zoldseg = "Nincsenek Zöldségek";
+        }
+
+        if (!listazzEgysegSzerint(boltEgysegek.Ital).isEmpty()) {
+            italok = listazzEgysegSzerint(boltEgysegek.Ital).toString();
+        } else {
+            italok = "Nincsenek Italok";
+        }
+
+        if (!listazzEgysegSzerint(boltEgysegek.ElektronikaiCikk).isEmpty()) {
+            elektronikaicikkek = listazzEgysegSzerint(boltEgysegek.ElektronikaiCikk).toString();
+        } else {
+            elektronikaicikkek = "Nincsenek Elektronikai Cikkek";
+        }
+
+        return "Tejtermékek:" + tejtermek + "\n"
+                + "Húsok: " + husok + "\n"
+                + "Pékárúk: " + pekaruk + "\n"
+                + "Zöldségek:" + zoldseg + "\n"
+                + "Italok: " + italok + "\n"
+                + "Elektronikai cikkek: " + elektronikaicikkek + "\n";
     }
 
     List<Termék> altalanosKereses(String mit) { //minden stringet végignéz a termékben, és visszadja a termékeket amelyikekben voltak a stringek
@@ -96,6 +142,16 @@ public class Bolt {
 
         }
         return keresettTermekek;
+    }
+
+    void teszt() {
+        //tombe valtoztatjuk a listánkat
+        Termék[] tomb = Lista.toArray(new Termék[0]);
+
+        for (Termék termek : tomb) {
+            System.out.println(termek + " ");
+        }
+
     }
 
     @Override
